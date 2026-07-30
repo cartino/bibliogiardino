@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bibliogiardino</title>
+
+  <!-- Font morbidi e amichevoli -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Patrick+Hand&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="home-page">
+
+  <header class="hero">
+
+    <nav class="navbar">
+
+      <a class="logo" href="index.html" aria-label="Home Bibliogiardino">
+        <img src="logo.png" alt="Logo Bibliogiardino">
+      </a>
+
+      <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" type="button">
+        ☰
+      </button>
+
+      <div class="menu">
+        <a class="active" href="index.html">Home</a>
+        <a href="chi-siamo.html">Chi siamo</a>
+        <a href="eventi.html">Eventi</a>
+        <a href="calendario.html">Calendario</a>
+        <a href="contatti.html">Contatti</a>
+      </div>
+
+    </nav>
+
+    <div class="hero-inner">
+
+      <div class="hero-text">
+
+        <div class="sun-lines" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <p class="hero-kicker">
+          Scopri il
+        </p>
+
+        <h1>BIBLIOGIARDINO</h1>
+
+        <div class="title-underline" aria-hidden="true"></div>
+
+        <p class="hero-description">
+          Un giardino aperto e curato insieme,<br>
+          davanti alla Biblioteca di Villapizzone.<br>
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="chi-siamo.html" class="button primary">
+            Scopri il progetto <span aria-hidden="true">🍃</span>
+          </a>
+
+          <a href="calendario.html" class="button secondary">
+            Partecipa <span aria-hidden="true">🧡</span>
+          </a>
+
+        </div>
+
+      </div>
+
+      <aside class="event-box" aria-label="Prossimo evento">
+
+        <div class="event-box-label">
+          PROSSIMO EVENTO
+        </div>
+
+        <div id="event-container" class="loading">
+          Caricamento evento...
+        </div>
+
+      </aside>
+
+    </div>
+
+    <div class="hero-flower" aria-hidden="true">
+      <span class="flower-head">✿</span>
+      <span class="flower-stem"></span>
+      <span class="flower-leaf leaf-left"></span>
+      <span class="flower-leaf leaf-right"></span>
+    </div>
+
+  </header>
+
+  <main class="container">
+
+    <section class="activities" aria-label="Cosa facciamo">
+
+      <article class="activity">
+
+        <div class="activity-icon activity-icon-green">
+          <span>🌱</span>
+        </div>
+
+        <div>
+          <h3>Curiamo il giardino</h3>
+
+          <p>
+            Manutenzione e cura del verde
+            tutto l’anno, insieme.
+          </p>
+
+          <div class="activity-mark green-mark" aria-hidden="true"></div>
+        </div>
+
+      </article>
+
+      <article class="activity">
+
+        <div class="activity-icon activity-icon-yellow">
+          <span>🗓️</span>
+        </div>
+
+        <div>
+          <h3>Organizziamo eventi</h3>
+
+          <p>
+            Attività, laboratori e incontri
+            aperti a tutti.
+          </p>
+
+          <div class="activity-mark yellow-mark" aria-hidden="true"></div>
+        </div>
+
+      </article>
+
+      <article class="activity">
+
+        <div class="activity-icon activity-icon-coral">
+          <span>👥</span>
+        </div>
+
+        <div>
+          <h3>Creiamo comunità</h3>
+
+          <p>
+            Incontri, collaborazione e condivisione
+            per un quartiere più bello e accogliente.
+          </p>
+
+          <div class="activity-mark coral-mark" aria-hidden="true"></div>
+        </div>
+
+      </article>
+
+    </section>
+
+    <section id="instagram" class="instagram-section">
+
+      <div class="section-heading">
+        <p class="section-kicker">Dal nostro Instagram</p>
+        <h2>Ultimi momenti dal Bibliogiardino</h2>
+      </div>
+
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+
+      <div
+        class="elfsight-app-ea453f16-bf0e-4d79-a169-5b4b43389ae8"
+        data-elfsight-app-lazy>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>Bibliogiardino</strong> – Cura del verde e comunità 🌿
+  </footer>
+
+  <script>
+    const calendarId =
+      "bibliogiardino.villapizzone@gmail.com";
+
+    const apiKey =
+      "AIzaSyAvkKbgUNNKUj0r7oD1LZCK9CdsoH7PYZI";
+
+    async function loadNextEvent() {
+
+      const now = new Date().toISOString();
+
+      const url =
+        `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events` +
+        `?key=${apiKey}` +
+        `&timeMin=${now}` +
+        `&maxResults=1` +
+        `&orderBy=startTime` +
+        `&singleEvents=true`;
+
+      try {
+
+        const response = await fetch(url);
+        const data = await response.json();
+
+        const container =
+          document.getElementById("event-container");
+
+        if (!data.items || data.items.length === 0) {
+
+          container.classList.remove("loading");
+
+          container.innerHTML = `
+            <div class="event-empty">
+              <div class="event-empty-icon">🌿</div>
+
+              <div>
+                <div class="event-title">
+                  Stiamo preparando nuove attività!
+                </div>
+
+                <div class="event-empty-text">
+                  Torna presto per scoprire i prossimi appuntamenti del Bibliogiardino.
+                </div>
+              </div>
+            </div>
+          `;
+
+          return;
+        }
+
+        const event = data.items[0];
+
+        const title =
+          event.summary || "Evento";
+
+        const date =
+          new Date(event.start.dateTime || event.start.date);
+
+        const formattedDate =
+          date.toLocaleDateString("it-IT", {
+            weekday: "long",
+            day: "numeric",
+            month: "long"
+          });
+
+        const time =
+          event.start.dateTime
+            ? date.toLocaleTimeString("it-IT", {
+                hour: "2-digit",
+                minute: "2-digit"
+              })
+            : "Tutto il giorno";
+
+        const location =
+          event.location || "Biblioteca di Villapizzone";
+
+        container.classList.remove("loading");
+
+        container.innerHTML = `
+          <div class="event-real">
+            <div class="event-real-title">
+              ${title}
+            </div>
+
+            <div class="event-date">
+              📅 ${formattedDate}
+            </div>
+
+            <div class="event-time">
+              🕒 ${time}
+            </div>
+
+            <div class="event-location">
+              📍 ${location}
+            </div>
+
+            <a href="calendario.html" class="event-link">
+              Vedi tutti gli eventi →
+            </a>
+          </div>
+        `;
+
+      } catch (error) {
+
+        console.error(error);
+
+        document.getElementById("event-container").innerHTML = `
+          <div class="event-empty">
+            <div class="event-empty-icon">🌿</div>
+
+            <div>
+              <div class="event-title">
+                Non riusciamo a caricare gli eventi
+              </div>
+
+              <div class="event-empty-text">
+                Riprova più tardi o controlla la pagina calendario.
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    if (menuToggle && menu) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = menu.classList.toggle("is-open");
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.textContent = isOpen ? "×" : "☰";
+      });
+    }
+
+    loadNextEvent();
+  </script>
+
+</body>
+</html>

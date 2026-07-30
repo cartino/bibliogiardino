@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contatti – Bibliogiardino</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Patrick+Hand&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="contacts-page">
+
+  <header class="internal-header contacts-header">
+
+    <nav class="navbar">
+
+      <a class="logo" href="index.html" aria-label="Home Bibliogiardino">
+        <img src="logo.png" alt="Logo Bibliogiardino">
+      </a>
+
+      <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" type="button">
+        ☰
+      </button>
+
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="chi-siamo.html">Chi siamo</a>
+        <a href="eventi.html">Eventi</a>
+        <a href="calendario.html">Calendario</a>
+        <a class="active" href="contatti.html">Contatti</a>
+      </div>
+
+    </nav>
+
+    <section class="contacts-intro">
+
+      <div class="contacts-intro-copy">
+        <p class="contacts-eyebrow">Parliamone</p>
+
+        <h1>Contatti</h1>
+
+        <div class="contacts-title-mark" aria-hidden="true"></div>
+
+        <p>
+          Per informazioni sul Bibliogiardino,
+          sugli eventi o sulle attività puoi scriverci.
+        </p>
+      </div>
+
+      <div class="contacts-illustration" aria-hidden="true">
+        <span class="contacts-pot">🪴</span>
+        <span class="contacts-envelope">✉️</span>
+      </div>
+
+    </section>
+
+    <div class="internal-wave" aria-hidden="true"></div>
+
+  </header>
+
+  <main class="contacts-main">
+
+    <section class="contact-card" aria-labelledby="scrivici">
+
+      <span class="contact-pin contact-pin-left" aria-hidden="true"></span>
+      <span class="contact-pin contact-pin-right" aria-hidden="true"></span>
+
+      <div class="contact-card-heading">
+        <p class="section-kicker">Restiamo in contatto</p>
+        <h2 id="scrivici">Scrivici o passa a trovarci</h2>
+      </div>
+
+      <div class="contact-details">
+
+        <article class="contact-detail">
+          <div class="contact-icon" aria-hidden="true">✉️</div>
+
+          <div>
+            <h3>Email</h3>
+            <a href="mailto:bibliogiardino.villapizzone@gmail.com">
+              bibliogiardino.villapizzone@gmail.com
+            </a>
+          </div>
+        </article>
+
+        <article class="contact-detail contact-location">
+          <div class="contact-icon" aria-hidden="true">📍</div>
+
+          <div>
+            <h3>Dove siamo</h3>
+
+            <p>
+              Via Rosina Ferrario Grugnola, 3,<br>
+              20156 Milano MI
+            </p>
+
+            <div class="contact-map">
+              <iframe
+                src="https://www.google.com/maps?q=Via%20Rosina%20Ferrario%20Grugnola%203%2C%2020156%20Milano%20MI&output=embed"
+                title="Mappa del Bibliogiardino"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+        </article>
+
+        <article class="contact-detail">
+          <div class="contact-icon" aria-hidden="true">🗓️</div>
+
+          <div>
+            <h3>Quando trovarci</h3>
+            <p>
+              Consulta il calendario per conoscere
+              i prossimi appuntamenti aperti al quartiere.
+            </p>
+
+            <a class="contact-text-link" href="calendario.html">
+              Guarda il calendario →
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+    <section class="contacts-note">
+      <span aria-hidden="true">🌿</span>
+      <p>
+        Il Bibliogiardino è uno spazio all’aperto:
+        il modo migliore per conoscerlo è passare durante uno degli eventi.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>Bibliogiardino</strong> – Cura del verde e comunità 🌿
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    if (menuToggle && menu) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = menu.classList.toggle("is-open");
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.textContent = isOpen ? "×" : "☰";
+      });
+    }
+  </script>
+
+</body>
+</html>

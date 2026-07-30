@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventi e momenti condivisi – Bibliogiardino</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Patrick+Hand&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="events-page">
+<header class="internal-header">
+  <nav class="navbar">
+    <a class="logo" href="index.html" aria-label="Home Bibliogiardino"><img src="logo.png" alt="Logo Bibliogiardino"></a>
+    <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" type="button">☰</button>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a class="active" href="eventi.html">Eventi</a>
+      <a href="calendario.html">Calendario</a>
+      <a href="contatti.html">Contatti</a>
+    </div>
+  </nav>
+  <section class="events-hero">
+    <div class="events-hero-copy">
+      <p class="events-eyebrow">Il diario del Bibliogiardino</p>
+      <h1>Eventi <span>e momenti condivisi</span></h1>
+      <div class="events-title-mark" aria-hidden="true"></div>
+      <p class="events-intro">Laboratori, letture, musica, scambi di piante e pomeriggi trascorsi insieme nel giardino davanti alla Biblioteca di Villapizzone.</p>
+    </div>
+    <figure class="events-hero-photo"><img src="eventi.JPG" alt="Un momento condiviso nel Bibliogiardino"><span class="photo-tape" aria-hidden="true"></span></figure>
+  </section>
+  <div class="internal-wave" aria-hidden="true"></div>
+</header>
+<main class="events-main">
+<section class="events-diary" aria-labelledby="eventi-passati">
+  <div class="events-section-heading">
+    <p class="section-kicker">Il nostro album</p>
+    <h2 id="eventi-passati">Eventi passati</h2>
+    <p>Piccoli racconti e fotografie di quello che è successo nel Bibliogiardino.</p>
+  </div>
+  <article class="story-event">
+    <figure class="story-photo story-photo-left"><img src="scambio.jpg" alt="Piante e persone durante uno scambio nel giardino"><span class="photo-tape" aria-hidden="true"></span></figure>
+    <div class="story-copy"><span class="event-stamp">🌼 Scambio piante, pic-nic e giochi</span><p class="story-date">21 marzo 2026</p><h3>Bibliofesta di primavera</h3><p>Una mattina tra talee, semi, piante, picnic e chiacchiere. Il giardino si è riempito di colori e di persone curiose di scambiarsi qualcosa e conoscersi un po’ meglio.</p></div>
+  </article>
+  <article class="story-event story-event-reverse">
+    <figure class="story-photo story-photo-right"><img src="tenda.jpg" alt="Bambini e bambine riuniti sotto una tenda durante il Bivacco Partigiano"><span class="photo-tape" aria-hidden="true"></span></figure>
+    <div class="story-copy"><span class="event-stamp">⛺ Bivacco e racconti</span><p class="story-date">11 aprile 2026</p><h3>Bivacco Partigiano</h3><p>Circondati dal buio e dai suoni della natura, bambini e bambine hanno conosciuto storie di persone coraggiose che hanno difeso ciò che amavano, in un viaggio fatto di racconti avventurosi.</p></div>
+  </article>
+  <article class="story-event">
+    <figure class="story-photo story-photo-left"><img src="festa.jpg" alt="Persone riunite nel giardino durante una festa"><span class="photo-tape" aria-hidden="true"></span></figure>
+    <div class="story-copy"><span class="event-stamp">🎵 Festa di quartiere</span><p class="story-date">24 maggio 2026</p><h3>Pomeriggio di Musica</h3><p>Musica, merenda e tante persone passate anche solo per curiosare. Il Bibliogiardino è diventato per qualche ora un piccolo punto d’incontro aperto a tutto il quartiere.</p></div>
+  </article>
+</section>
+<section class="moments-gallery" aria-labelledby="altri-momenti">
+  <div class="events-section-heading compact"><p class="section-kicker">Foto sparse</p><h2 id="altri-momenti">Altri momenti dal Bibliogiardino</h2></div>
+  <div class="moments-grid">
+    <figure><img src="a.JPG" alt="Musicista al pianoforte tra le piante del Bibliogiardino"></figure>
+    <figure><img src="b.jpg" alt="Attività per bambini e bambine sull’erba"></figure>
+    <figure><img src="c.JPG" alt="Ingresso del giardino con arco di rose"></figure>
+    <figure><img src="d.jpg" alt="Cartello Racconti tra le ortensie durante un evento"></figure>
+    <figure><img src="e.jpg" alt="Allestimento partecipativo con messaggi e idee dei cittadini"></figure>
+    <figure><img src="f.jpg" alt="Attività di yoga per bambini e bambine nel giardino"></figure>
+  </div>
+</section>
+<section class="events-closing">
+  <div><p class="section-kicker">Prossimamente</p><h2>Ci vediamo al prossimo evento 🌿</h2><p>Controlla il calendario e passa a trovarci quando c’è qualcosa che ti incuriosisce.</p></div>
+  <a class="events-calendar-link" href="calendario.html">Guarda il calendario <span aria-hidden="true">→</span></a>
+</section>
+</main>
+<footer><strong>Bibliogiardino</strong> – Cura del verde e comunità 🌿</footer>
+<script>
+const menuToggle=document.querySelector('.menu-toggle');
+const menu=document.querySelector('.menu');
+if(menuToggle&&menu){menuToggle.addEventListener('click',()=>{const isOpen=menu.classList.toggle('is-open');menuToggle.setAttribute('aria-expanded',isOpen);menuToggle.textContent=isOpen?'×':'☰';});}
+</script>
+</body></html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Calendario – Bibliogiardino</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Patrick+Hand&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="calendar-page">
+
+  <header class="internal-header calendar-header">
+
+    <nav class="navbar">
+
+      <a class="logo" href="index.html" aria-label="Home Bibliogiardino">
+        <img src="logo.png" alt="Logo Bibliogiardino">
+      </a>
+
+      <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" type="button">
+        ☰
+      </button>
+
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="chi-siamo.html">Chi siamo</a>
+        <a href="eventi.html">Eventi</a>
+        <a class="active" href="calendario.html">Calendario</a>
+        <a href="contatti.html">Contatti</a>
+      </div>
+
+    </nav>
+
+    <section class="calendar-intro">
+
+      <p class="calendar-eyebrow">Gli appuntamenti del giardino</p>
+
+      <h1>Calendario</h1>
+
+      <div class="calendar-title-mark" aria-hidden="true"></div>
+
+      <p>
+        Qui trovi gli eventi e le attività in programma
+        al Bibliogiardino.
+      </p>
+
+    </section>
+
+    <div class="internal-wave" aria-hidden="true"></div>
+
+  </header>
+
+  <main class="calendar-main">
+
+    <section class="garden-noticeboard" aria-label="Bacheca degli appuntamenti">
+
+      <div class="noticeboard-top">
+        <span class="noticeboard-pin pin-left" aria-hidden="true"></span>
+
+        <div>
+          <p class="noticeboard-small">Bacheca del Bibliogiardino</p>
+          <h2>Prossimi appuntamenti</h2>
+        </div>
+
+        <span class="noticeboard-pin pin-right" aria-hidden="true"></span>
+      </div>
+
+      <div class="calendar-paper">
+
+        <span class="paper-tape tape-top-left" aria-hidden="true"></span>
+        <span class="paper-tape tape-top-right" aria-hidden="true"></span>
+
+        <iframe
+          class="google-calendar"
+          src="https://calendar.google.com/calendar/embed?src=bibliogiardino.villapizzone%40gmail.com&ctz=Europe%2FRome"
+          title="Calendario degli eventi del Bibliogiardino"
+          loading="lazy"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
+
+      </div>
+
+      <div class="noticeboard-footer">
+        <span aria-hidden="true">🌱</span>
+        <p>Il calendario viene aggiornato automaticamente.</p>
+        <span aria-hidden="true">🌼</span>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>Bibliogiardino</strong> – Cura del verde e comunità 🌿
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    if (menuToggle && menu) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = menu.classList.toggle("is-open");
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.textContent = isOpen ? "×" : "☰";
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi siamo – Bibliogiardino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Patrick+Hand&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="about-page">
+<header class="internal-header about-header">
+<nav class="navbar">
+<a class="logo" href="index.html" aria-label="Home Bibliogiardino"><img src="logo.png" alt="Logo Bibliogiardino"></a>
+<button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" type="button">☰</button>
+<div class="menu">
+<a href="index.html">Home</a><a class="active" href="chi-siamo.html">Chi siamo</a><a href="eventi.html">Eventi</a><a href="calendario.html">Calendario</a><a href="contatti.html">Contatti</a>
+</div></nav>
+<section class="about-hero">
+<figure class="about-hero-photo"><img src="welcome.jpg" alt="Ingresso del Bibliogiardino davanti alla Biblioteca di Villapizzone"></figure>
+<div class="about-hero-copy"><p class="about-eyebrow">La nostra storia</p><h1>Come è nato<br>il Bibliogiardino</h1><div class="about-title-mark" aria-hidden="true"></div><p>Un percorso nato insieme, passo dopo passo, per trasformare uno spazio dimenticato in un giardino aperto al quartiere.</p></div>
+</section><div class="internal-wave" aria-hidden="true"></div>
+</header>
+<main class="about-main">
+<section class="about-journey" aria-label="Le tre tappe della storia del Bibliogiardino">
+<div class="journey-path" aria-hidden="true"></div>
+
+<article class="journey-step">
+<figure class="journey-photo photo-left">
+<img src="patto.jpg" alt="Il momento della firma del patto per il Bibliogiardino">
+<span class="photo-tape tape-green" aria-hidden="true"></span>
+</figure>
+<div class="journey-copy">
+<span class="journey-number">1</span>
+<p class="journey-kicker">Il primo passo</p>
+<h2>Un patto con il Comune</h2>
+<p>Il Bibliogiardino nasce da un accordo con il Comune di Milano e con la Biblioteca di Villapizzone, per prenderci cura insieme di questo spazio e trasformarlo in un bene comune aperto al quartiere.</p>
+</div>
+</article>
+
+<article class="journey-step journey-step-reverse">
+<figure class="journey-photo photo-right">
+<img src="apertura.jpg" alt="Cittadine e cittadini riuniti durante un evento nel Bibliogiardino">
+<span class="photo-tape tape-yellow" aria-hidden="true"></span>
+</figure>
+<div class="journey-copy">
+<span class="journey-number">2</span>
+<p class="journey-kicker">Il giardino si apre</p>
+<h2>L’apertura alla cittadinanza</h2>
+<p>Il giardino ha iniziato a vivere attraverso incontri, eventi, scambi e momenti condivisi. Oggi è uno spazio aperto al quartiere, da attraversare, conoscere e vivere insieme.</p>
+</div>
+</article>
+
+<article class="journey-step">
+<figure class="journey-photo photo-left">
+<img src="olmo.jpg" alt="La cura dell’olmo del Bibliogiardino">
+<span class="photo-tape tape-coral" aria-hidden="true"></span>
+</figure>
+<div class="journey-copy">
+<span class="journey-number">3</span>
+<p class="journey-kicker">La tutela dell’albero</p>
+<h2>Il salvataggio dell’olmo</h2>
+<p>L'olmo è uno dei simboli del Bibliogiardino e gli vogliamo un gran bene. Quando è stato necessario prendersene cura, Cristina, bibliogiardiniera e promotrice del progetto di salvataggio, insieme agli arboricoltori e agli agronomi dell'Università degli Studi di Milano, ha scelto di seguirne la cura nel tempo. Come comunità siamo felici di sostenere questo percorso: perché prenderci cura dell'olmo significa prenderci cura anche del luogo che condividiamo ogni giorno.</p>
+</div>
+</article>
+
+</section>
+<section class="about-closing"><div class="about-closing-icon" aria-hidden="true">🪴</div><div><p class="section-kicker">Una storia ancora aperta</p><h2>Il Bibliogiardino continua a crescere.</h2><p>Cambia con le stagioni, con le idee e con le persone che ogni giorno lo attraversano e lo rendono speciale.</p></div></section>
+</main>
+<footer><strong>Bibliogiardino</strong> – Cura del verde e comunità 🌿</footer>
+<script>const menuToggle=document.querySelector('.menu-toggle');const menu=document.querySelector('.menu');if(menuToggle&&menu){menuToggle.addEventListener('click',()=>{const isOpen=menu.classList.toggle('is-open');menuToggle.setAttribute('aria-expanded',isOpen);menuToggle.textContent=isOpen?'×':'☰';});}</script>
+</body></html>

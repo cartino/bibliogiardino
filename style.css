@@ -1549,3 +1549,800 @@ footer {
     text-align: left;
   }
 }
+
+/* =====================================================
+   OTTIMIZZAZIONE RESPONSIVE — TABLET E SMARTPHONE
+   Queste regole sono aggiuntive: il layout desktop resta invariato.
+   ===================================================== */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+iframe {
+  max-width: 100%;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    min-height: auto;
+    padding: 12px 16px;
+    gap: 16px;
+  }
+
+  .logo img {
+    height: 60px;
+    max-width: min(230px, 68vw);
+    object-fit: contain;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    flex: 0 0 auto;
+    font-size: 30px;
+  }
+
+  .menu {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 18px 16px;
+    background: var(--paper);
+    border: 1px solid rgba(79, 143, 58, 0.12);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+  }
+
+  .menu.is-open {
+    display: flex;
+  }
+
+  .menu a {
+    width: 100%;
+    padding: 13px 6px;
+    font-size: 25px;
+  }
+
+  .menu a.active::after {
+    left: 6px;
+    right: auto;
+    bottom: 5px;
+    width: 52px;
+  }
+
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 38px;
+  }
+
+  .hero-text,
+  .event-box {
+    min-width: 0;
+  }
+
+  .event-box {
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .internal-header,
+  .about-header {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .events-hero,
+  .about-hero {
+    width: 100%;
+  }
+
+  .events-hero-copy,
+  .about-hero-copy,
+  .story-copy,
+  .journey-copy {
+    min-width: 0;
+  }
+
+  .events-hero-photo img,
+  .about-hero-photo img,
+  .story-photo img,
+  .journey-photo img {
+    max-width: 100%;
+  }
+
+  .calendar-main,
+  .contacts-main,
+  .events-main,
+  .about-main {
+    width: 100%;
+  }
+
+  .contact-map {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 16px;
+  }
+
+  .contact-map iframe {
+    display: block;
+    width: 100%;
+    height: 230px;
+    border: 0;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 12px 12px 76px;
+    background-position: 60% center;
+  }
+
+  .internal-header,
+  .about-header {
+    padding: 12px 12px 76px;
+  }
+
+  .navbar {
+    padding: 10px 12px;
+    border-radius: 16px;
+  }
+
+  .logo img {
+    height: 52px;
+    max-width: 72vw;
+  }
+
+  .menu-toggle {
+    font-size: 28px;
+  }
+
+  .menu {
+    top: calc(100% + 8px);
+    padding: 9px 14px 13px;
+    border-radius: 16px;
+  }
+
+  .menu a {
+    padding: 12px 5px;
+    font-size: 23px;
+  }
+
+  /* Home */
+  .hero-inner {
+    margin-top: 42px;
+    gap: 26px;
+  }
+
+  .hero-text::before {
+    inset: -22px -12px -22px -12px;
+    filter: blur(7px);
+  }
+
+  .sun-lines {
+    left: -12px;
+    top: -22px;
+    transform: scale(0.62);
+  }
+
+  .hero-kicker {
+    font-size: clamp(31px, 9vw, 38px);
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(34px, 10.7vw, 48px);
+    line-height: 0.96;
+    letter-spacing: 0;
+  }
+
+  .hero h1::after {
+    right: -4px;
+    top: -14px;
+    font-size: 23px;
+  }
+
+  .title-underline {
+    width: 100%;
+    max-width: 360px;
+    height: 7px;
+    margin: 13px 0 22px;
+  }
+
+  .hero-description {
+    max-width: 100%;
+    font-size: clamp(23px, 6.5vw, 27px);
+    line-height: 1.3;
+  }
+
+  .hero-buttons {
+    margin-top: 28px;
+    gap: 11px;
+  }
+
+  .button {
+    min-height: 50px;
+    padding: 12px 18px;
+    font-size: 22px;
+  }
+
+  .event-box {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
+
+  .event-box::before {
+    display: none;
+  }
+
+  .event-box::after {
+    right: 20px;
+    bottom: 20px;
+    font-size: 30px;
+  }
+
+  .event-box-label {
+    padding-right: 32px;
+    font-size: 23px;
+  }
+
+  .event-empty {
+    gap: 13px;
+  }
+
+  .event-empty-icon {
+    font-size: 36px;
+  }
+
+  .event-title,
+  .event-real-title {
+    font-size: 27px;
+  }
+
+  .event-empty-text,
+  .event-date,
+  .event-time,
+  .event-location,
+  .event-link,
+  .loading {
+    font-size: 20px;
+  }
+
+  .container {
+    margin-top: -42px;
+    padding: 0 12px;
+  }
+
+  .activities {
+    gap: 30px;
+    padding: 32px 20px 30px;
+  }
+
+  .activity {
+    min-width: 0;
+  }
+
+  .activity h3 {
+    font-size: 31px;
+  }
+
+  .activity p {
+    font-size: 21px;
+  }
+
+  .instagram-section {
+    margin-top: 24px;
+    padding: 26px 18px;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .instagram-section h2 {
+    font-size: clamp(31px, 9vw, 41px);
+    line-height: 1.08;
+  }
+
+  .instagram-section > div,
+  .instagram-section iframe {
+    max-width: 100% !important;
+  }
+
+  /* Testate interne */
+  .internal-wave {
+    height: 62px;
+  }
+
+  /* Chi siamo */
+  .about-main {
+    padding: 26px 12px 10px;
+  }
+
+  .about-hero {
+    margin-top: 38px;
+    gap: 26px;
+  }
+
+  .about-eyebrow,
+  .journey-kicker {
+    font-size: 23px;
+  }
+
+  .about-hero h1 {
+    max-width: 100%;
+    font-size: clamp(34px, 10vw, 46px);
+    line-height: 1.02;
+    overflow-wrap: normal;
+  }
+
+  .about-title-mark {
+    width: 82%;
+    max-width: 280px;
+    margin: 18px 0 22px;
+  }
+
+  .about-hero-copy > p:last-child {
+    font-size: 23px;
+    line-height: 1.35;
+  }
+
+  .about-hero-photo img,
+  .journey-photo img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .about-hero-photo img {
+    border-radius: 24px 48px 24px 24px;
+  }
+
+  .about-journey {
+    padding-top: 24px;
+  }
+
+  .journey-step,
+  .journey-step-reverse {
+    gap: 28px;
+    margin-bottom: 64px;
+  }
+
+  .journey-photo img {
+    border-width: 8px;
+    border-bottom-width: 14px;
+  }
+
+  .journey-number {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 14px;
+    font-size: 25px;
+  }
+
+  .journey-copy h2,
+  .about-closing h2 {
+    font-size: clamp(32px, 9vw, 41px);
+    line-height: 1.05;
+  }
+
+  .journey-copy h2::after {
+    width: 130px;
+    margin-top: 12px;
+  }
+
+  .journey-copy > p:last-child {
+    margin-top: 18px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .about-closing {
+    margin-top: 4px;
+    padding: 30px 22px;
+    gap: 18px;
+    border-radius: 24px;
+  }
+
+  .about-closing p:not(.section-kicker) {
+    font-size: 21px;
+  }
+
+  /* Eventi */
+  .events-main {
+    padding: 26px 12px 10px;
+  }
+
+  .events-hero {
+    margin-top: 38px;
+    gap: 26px;
+  }
+
+  .events-eyebrow {
+    font-size: 23px;
+  }
+
+  .events-hero h1 {
+    font-size: clamp(43px, 13vw, 58px);
+    line-height: 0.98;
+  }
+
+  .events-hero h1 span {
+    margin-top: 6px;
+    font-size: clamp(29px, 8.4vw, 37px);
+    line-height: 1.05;
+  }
+
+  .events-title-mark {
+    width: 78%;
+    max-width: 245px;
+    margin: 18px 0 22px;
+  }
+
+  .events-intro {
+    font-size: 23px;
+    line-height: 1.35;
+  }
+
+  .events-hero-photo img,
+  .story-photo img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .events-hero-photo img {
+    border-radius: 24px 24px 48px 24px;
+  }
+
+  .events-section-heading {
+    margin-bottom: 38px;
+  }
+
+  .events-section-heading h2,
+  .events-closing h2 {
+    font-size: clamp(33px, 9.5vw, 43px);
+    line-height: 1.05;
+  }
+
+  .events-section-heading > p:last-child {
+    margin-top: 13px;
+    font-size: 21px;
+  }
+
+  .story-event,
+  .story-event-reverse {
+    gap: 27px;
+    margin-bottom: 62px;
+  }
+
+  .event-stamp {
+    max-width: 100%;
+    margin-bottom: 14px;
+    padding: 8px 13px;
+    font-size: 18px;
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  .story-copy h3 {
+    margin-bottom: 14px;
+    font-size: clamp(31px, 9vw, 40px);
+    line-height: 1.05;
+  }
+
+  .story-copy > p:last-child {
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .moments-gallery {
+    padding: 26px 16px;
+    border-radius: 24px;
+  }
+
+  .moments-grid {
+    gap: 10px;
+  }
+
+  .events-closing {
+    margin-top: 38px;
+    padding: 30px 22px;
+    gap: 24px;
+    border-radius: 24px;
+  }
+
+  .events-closing p:not(.section-kicker) {
+    font-size: 21px;
+  }
+
+  .events-calendar-link {
+    width: fit-content;
+    max-width: 100%;
+    font-size: 22px;
+  }
+
+  /* Calendario */
+  .calendar-header {
+    padding-bottom: 82px;
+  }
+
+  .calendar-intro {
+    margin-top: 38px;
+    padding: 0 4px;
+  }
+
+  .calendar-eyebrow {
+    font-size: 24px;
+  }
+
+  .calendar-intro h1 {
+    font-size: clamp(48px, 14vw, 60px);
+  }
+
+  .calendar-title-mark {
+    width: 76%;
+    margin: 18px auto 22px;
+  }
+
+  .calendar-intro > p:last-child {
+    font-size: 23px;
+    line-height: 1.35;
+  }
+
+  .calendar-main {
+    padding: 26px 10px 26px;
+  }
+
+  .garden-noticeboard {
+    padding: 22px 10px 26px;
+    border-width: 8px;
+    border-radius: 20px;
+  }
+
+  .garden-noticeboard::before,
+  .garden-noticeboard::after {
+    bottom: -24px;
+    width: 36px;
+    height: 44px;
+  }
+
+  .noticeboard-top {
+    min-height: 76px;
+    margin-bottom: 18px;
+  }
+
+  .noticeboard-small {
+    font-size: 20px;
+  }
+
+  .noticeboard-top h2 {
+    font-size: clamp(28px, 9vw, 36px);
+    line-height: 1.05;
+  }
+
+  .calendar-paper {
+    padding: 8px;
+    transform: none;
+  }
+
+  .paper-tape {
+    width: 64px;
+    height: 21px;
+  }
+
+  .google-calendar {
+    display: block;
+    width: 100% !important;
+    height: 650px !important;
+    margin: 0 !important;
+    transform: none !important;
+    transform-origin: initial !important;
+  }
+
+  .noticeboard-footer {
+    margin-top: 21px;
+    gap: 10px;
+  }
+
+  .noticeboard-footer span {
+    font-size: 23px;
+  }
+
+  .noticeboard-footer p {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  /* Contatti */
+  .contacts-header {
+    padding-bottom: 80px;
+  }
+
+  .contacts-intro {
+    margin-top: 38px;
+    padding: 0 4px;
+  }
+
+  .contacts-eyebrow {
+    font-size: 24px;
+  }
+
+  .contacts-intro h1 {
+    font-size: clamp(48px, 14vw, 60px);
+  }
+
+  .contacts-title-mark {
+    width: 72%;
+    margin: 18px 0 22px;
+  }
+
+  .contacts-intro-copy > p:last-child {
+    font-size: 23px;
+    line-height: 1.35;
+  }
+
+  .contacts-main {
+    padding: 26px 12px 10px;
+  }
+
+  .contact-card {
+    padding: 38px 16px 28px;
+    border-radius: 24px;
+  }
+
+  .contact-card-heading {
+    padding: 0 20px;
+  }
+
+  .contact-card-heading h2 {
+    font-size: clamp(34px, 10vw, 44px);
+    line-height: 1.05;
+  }
+
+  .contact-details {
+    margin-top: 32px;
+    gap: 16px;
+  }
+
+  .contact-detail {
+    padding: 18px 15px;
+    border-radius: 18px;
+  }
+
+  .contact-detail h3 {
+    font-size: 28px;
+  }
+
+  .contact-detail p,
+  .contact-detail a {
+    font-size: 20px;
+  }
+
+  .contact-map iframe {
+    height: 220px;
+  }
+
+  .contacts-note {
+    margin-top: 24px;
+    padding: 22px 18px;
+    border-radius: 20px;
+  }
+
+  .contacts-note p {
+    font-size: 20px;
+  }
+
+  footer {
+    margin-top: 44px;
+    padding: 28px 14px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero h1 {
+    font-size: clamp(33px, 10.5vw, 43px);
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .event-box {
+    padding: 22px 17px;
+  }
+
+  .activity {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .activity p,
+  .activity-mark {
+    margin-inline: auto;
+  }
+
+  .about-hero h1 {
+    font-size: clamp(33px, 9.6vw, 40px);
+  }
+
+  .events-hero h1 {
+    font-size: clamp(41px, 12.5vw, 52px);
+  }
+
+  .moments-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: min(72vw, 280px);
+  }
+
+  .moments-grid figure:nth-child(1),
+  .moments-grid figure:nth-child(5) {
+    grid-row: span 1;
+  }
+
+  .contact-card-heading {
+    padding: 0 10px;
+  }
+
+  .contact-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .contacts-note {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 350px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .about-hero h1 {
+    font-size: 31px;
+  }
+
+  .calendar-intro h1,
+  .contacts-intro h1 {
+    font-size: 46px;
+  }
+
+  .garden-noticeboard {
+    padding-inline: 7px;
+    border-width: 7px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero h1::after {
+    display: none;
+  }
+}

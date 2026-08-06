@@ -80,6 +80,8 @@
         <iframe
           class="google-calendar"
           src="https://calendar.google.com/calendar/embed?src=bibliogiardino.villapizzone%40gmail.com&ctz=Europe%2FRome"
+          data-desktop-src="https://calendar.google.com/calendar/embed?src=bibliogiardino.villapizzone%40gmail.com&ctz=Europe%2FRome"
+          data-mobile-src="https://calendar.google.com/calendar/embed?src=bibliogiardino.villapizzone%40gmail.com&ctz=Europe%2FRome&mode=AGENDA&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&wkst=2"
           title="Calendario degli eventi del Bibliogiardino"
           loading="lazy"
           frameborder="0"
@@ -112,6 +114,29 @@
         menuToggle.setAttribute("aria-expanded", isOpen);
         menuToggle.textContent = isOpen ? "×" : "☰";
       });
+    }
+
+    const calendarFrame = document.querySelector(".google-calendar");
+    const mobileCalendar = window.matchMedia("(max-width: 600px)");
+
+    function updateCalendarView() {
+      if (!calendarFrame) return;
+
+      const nextSource = mobileCalendar.matches
+        ? calendarFrame.dataset.mobileSrc
+        : calendarFrame.dataset.desktopSrc;
+
+      if (calendarFrame.getAttribute("src") !== nextSource) {
+        calendarFrame.setAttribute("src", nextSource);
+      }
+    }
+
+    updateCalendarView();
+
+    if (typeof mobileCalendar.addEventListener === "function") {
+      mobileCalendar.addEventListener("change", updateCalendarView);
+    } else {
+      mobileCalendar.addListener(updateCalendarView);
     }
   </script>
 

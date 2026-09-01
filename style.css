@@ -1450,7 +1450,10 @@ iframe {
     min-height: 74px;
     margin: 14px auto -66px;
     padding: 9px 12px;
+    background: rgba(255, 249, 236, 0.93);
     border-radius: 20px;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
   }
 
   .home-page .logo img {
@@ -1480,7 +1483,7 @@ iframe {
     width: min(72%, 292px);
     max-width: calc(100% - 36px);
     padding: 14px 15px 13px;
-    background: rgba(255, 249, 236, 0.90);
+    background: rgba(255, 249, 236, 0.88);
     border: 1px solid rgba(255, 255, 255, 0.56);
     border-radius: 20px;
     box-shadow: 0 10px 24px rgba(46, 72, 38, 0.13);

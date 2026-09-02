@@ -1,4 +1,4 @@
-/* HOME MOBILE-FIRST R7 - 2026-09-02 */
+/* HOME MOBILE COMPOSED R8 - 2026-09-02 */
 
 /* HOME MOBILE TRASPARENZE - R6 VERIFICATO */
 
@@ -191,6 +191,10 @@ body {
 /* Wrapper neutro su desktop: diventa il riquadro fotografico solo su mobile. */
 .hero-mobile-stage {
   display: contents;
+}
+
+.hero-mobile-photo {
+  display: none;
 }
 
 .hero-text {
@@ -1438,7 +1442,7 @@ iframe {
     font-size: 23px;
   }
 
-  /* Home: layout mobile-first dedicato. Desktop invariato. */
+  /* Home: composizione mobile dedicata R8. Desktop invariato. */
   .home-page .hero {
     position: relative;
     min-height: 0;
@@ -1452,31 +1456,32 @@ iframe {
     display: none;
   }
 
+  /* Header più sottile: resta chiaramente lo stesso del desktop. */
   .home-page .navbar {
     position: absolute;
     top: 10px;
-    left: 12px;
-    right: 12px;
+    left: 14px;
+    right: 14px;
     z-index: 10;
     width: auto;
-    min-height: 64px;
+    min-height: 58px;
     margin: 0;
-    padding: 7px 10px;
-    background: rgba(255, 249, 236, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.52);
-    border-radius: 18px;
-    box-shadow: 0 7px 20px rgba(47, 75, 40, 0.12);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+    padding: 6px 10px;
+    background: rgba(255, 249, 236, 0.93);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 16px;
+    box-shadow: 0 5px 16px rgba(47, 75, 40, 0.10);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
   }
 
   .home-page .logo img {
-    height: 46px;
-    max-width: 116px;
+    height: 40px;
+    max-width: 104px;
   }
 
   .home-page .menu-toggle {
-    font-size: 27px;
+    font-size: 25px;
   }
 
   .home-page .hero-inner {
@@ -1485,31 +1490,37 @@ iframe {
     margin: 0;
   }
 
+  /*
+    Su mobile la foto e il testo sono due superfici distinte:
+    niente più card desktop sovrapposta alla fotografia.
+  */
   .home-page .hero-mobile-stage {
-    position: relative;
     display: block;
-    height: clamp(330px, 95vw, 390px);
     min-height: 0;
     padding: 0;
-    overflow: hidden;
-    background: url("000.jpg") center 48% / cover no-repeat;
-    border-radius: 0 0 24px 24px;
-    box-shadow: inset 0 -80px 90px rgba(23, 54, 22, 0.08);
+    background: var(--paper-soft);
+  }
+
+  .home-page .hero-mobile-photo {
+    display: block;
+    width: 100%;
+    height: clamp(245px, 68vw, 305px);
+    background: url("000.jpg") center 50% / cover no-repeat;
+    border-radius: 0 0 18px 18px;
   }
 
   .home-page .hero-text {
-    position: absolute;
-    left: 12px;
-    bottom: 12px;
-    width: min(80%, 286px);
-    max-width: calc(100% - 24px);
-    padding: 11px 12px 10px;
-    background: rgba(255, 249, 236, 0.86);
-    border: 1px solid rgba(255, 255, 255, 0.58);
-    border-radius: 17px;
-    box-shadow: 0 7px 20px rgba(46, 72, 38, 0.12);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+    position: relative;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 20px 22px 16px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .home-page .hero-text::before {
@@ -1517,14 +1528,15 @@ iframe {
   }
 
   .home-page .sun-lines {
-    left: -10px;
-    top: -15px;
-    transform: scale(0.36);
+    left: 8px;
+    top: 3px;
+    transform: scale(0.42);
+    transform-origin: top left;
   }
 
   .home-page .hero-kicker {
     margin-bottom: 1px;
-    font-size: clamp(20px, 5.7vw, 24px);
+    font-size: clamp(25px, 7.2vw, 31px);
     text-shadow: none;
   }
 
@@ -1533,7 +1545,7 @@ iframe {
     width: auto;
     max-width: 100%;
     margin: 0;
-    font-size: clamp(22px, 6.8vw, 28px);
+    font-size: clamp(31px, 9.3vw, 40px);
     line-height: 0.98;
     letter-spacing: -0.045em;
     white-space: nowrap;
@@ -1545,15 +1557,15 @@ iframe {
   }
 
   .home-page .title-underline {
-    width: 88px;
-    height: 4px;
-    margin: 7px 0 8px;
+    width: 126px;
+    height: 5px;
+    margin: 10px 0 12px;
   }
 
   .home-page .hero-description {
-    max-width: 245px;
-    font-size: clamp(13.5px, 3.9vw, 15.5px);
-    line-height: 1.17;
+    max-width: 350px;
+    font-size: clamp(17px, 4.7vw, 20px);
+    line-height: 1.25;
     text-shadow: none;
   }
 
@@ -1564,17 +1576,17 @@ iframe {
   .home-page .hero-buttons {
     display: flex;
     flex-wrap: nowrap;
-    gap: 6px;
-    margin-top: 9px;
+    gap: 10px;
+    margin-top: 14px;
   }
 
   .home-page .button {
     width: auto;
-    min-height: 32px;
-    padding: 6px 9px;
-    border-radius: 10px;
-    font-size: clamp(12.5px, 3.7vw, 14px);
-    gap: 5px;
+    min-height: 40px;
+    padding: 8px 13px;
+    border-radius: 12px;
+    font-size: clamp(15px, 4vw, 17px);
+    gap: 6px;
     white-space: nowrap;
   }
 
@@ -1582,15 +1594,26 @@ iframe {
     border-width: 2px;
   }
 
+  /*
+    Evento = fascia informativa, non una seconda hero.
+    La location resta disponibile nelle pagine evento/calendario,
+    ma non occupa spazio nella Home mobile.
+  */
   .home-page .event-box {
     width: auto;
     max-width: none;
     min-height: 0;
-    margin: 8px 10px 0;
-    padding: 9px 11px 8px;
-    border-width: 1px;
+    margin: 4px 18px 8px;
+    padding: 11px 13px 10px;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(232, 241, 210, 0.78),
+        rgba(221, 235, 199, 0.60)
+      );
+    border: 1px solid rgba(79, 143, 58, 0.24);
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(60, 80, 45, 0.08);
+    box-shadow: none;
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
   }
@@ -1601,16 +1624,16 @@ iframe {
   }
 
   .home-page .event-box-label {
-    margin-bottom: 3px;
+    margin-bottom: 4px;
     padding-right: 0;
-    font-size: 12px;
+    font-size: 12.5px;
     line-height: 1;
     letter-spacing: 0.55px;
   }
 
   .home-page .event-empty {
     display: grid;
-    grid-template-columns: 26px minmax(0, 1fr);
+    grid-template-columns: 28px minmax(0, 1fr);
     align-items: center;
     gap: 8px;
   }
@@ -1623,18 +1646,17 @@ iframe {
   .home-page .event-title,
   .home-page .event-real-title {
     margin-bottom: 2px;
-    font-size: clamp(15px, 4.3vw, 17px);
-    line-height: 1.04;
+    font-size: clamp(17px, 4.7vw, 20px);
+    line-height: 1.05;
   }
 
   .home-page .event-empty-text,
   .home-page .event-date,
   .home-page .event-time,
-  .home-page .event-location,
   .home-page .event-link,
   .home-page .loading {
-    font-size: 12px;
-    line-height: 1.12;
+    font-size: 13px;
+    line-height: 1.15;
   }
 
   .home-page .event-real {
@@ -1643,10 +1665,9 @@ iframe {
     grid-template-areas:
       "title title"
       "date time"
-      "location location"
       "link link";
-    column-gap: 9px;
-    row-gap: 2px;
+    column-gap: 12px;
+    row-gap: 4px;
     align-items: center;
   }
 
@@ -1665,17 +1686,13 @@ iframe {
   }
 
   .home-page .event-location {
-    grid-area: location;
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    display: none;
   }
 
   .home-page .event-link {
     grid-area: link;
     width: fit-content;
-    margin-top: 2px;
+    margin-top: 1px;
     border-bottom-width: 2px;
   }
 
@@ -1689,83 +1706,94 @@ iframe {
     padding: 0;
   }
 
+  /*
+    Le tre attività non sono card e non scorrono:
+    sono un'unica fascia compatta a tre colonne.
+  */
   .home-page .activities {
-    display: flex;
-    gap: 10px;
-    padding: 12px 12px 15px;
-    overflow-x: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    margin: 4px 0 0;
+    padding: 16px 12px 18px;
+    overflow: visible;
     background: transparent;
     border-radius: 0;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .home-page .activities::-webkit-scrollbar {
-    display: none;
   }
 
   .home-page .activity {
-    flex: 0 0 min(74vw, 282px);
-    min-height: 112px;
+    min-width: 0;
+    min-height: 0;
     display: grid;
-    grid-template-columns: 44px minmax(0, 1fr);
-    align-items: center;
-    gap: 10px;
-    padding: 13px 12px;
-    background: rgba(255, 249, 236, 0.96);
-    border: 1px solid rgba(79, 143, 58, 0.10);
-    border-radius: 17px;
-    box-shadow: 0 5px 14px rgba(46, 72, 38, 0.08);
-    scroll-snap-align: start;
+    grid-template-columns: 34px minmax(0, 1fr);
+    align-items: start;
+    gap: 7px;
+    padding: 4px 8px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .home-page .activity + .activity {
+    border-left: 1px solid rgba(46, 103, 55, 0.20);
   }
 
   .home-page .activity-icon {
-    width: 44px;
-    height: 44px;
+    width: 34px;
+    height: 34px;
   }
 
   .home-page .activity-icon span {
-    font-size: 23px;
+    font-size: 18px;
   }
 
   .home-page .activity h3 {
     margin-bottom: 3px;
-    font-size: 20px;
-    line-height: 1;
+    font-size: clamp(12.5px, 3.35vw, 14.5px);
+    line-height: 1.05;
   }
 
   .home-page .activity p {
     max-width: none;
-    font-size: 13.5px;
-    line-height: 1.14;
+    margin: 0;
+    font-size: clamp(9.5px, 2.55vw, 11px);
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
   }
 
   .home-page .activity-mark {
-    width: 42px;
-    height: 4px;
-    margin-top: 6px;
+    display: none;
   }
 
+  /*
+    Instagram senza "mega-card": titolo leggero e widget subito sotto.
+    Il numero di colonne interno resta gestito da Elfsight.
+  */
   .home-page .instagram-section {
-    margin: 2px 10px 0;
-    padding: 17px 11px 13px;
-    border-radius: 18px;
+    margin: 0;
+    padding: 15px 14px 18px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
     overflow: hidden;
   }
 
   .home-page .section-heading {
-    margin-bottom: 11px;
+    margin-bottom: 9px;
   }
 
   .home-page .section-kicker {
-    margin-bottom: 3px;
-    font-size: 17px;
+    margin-bottom: 0;
+    font-size: 18px;
   }
 
   .home-page .instagram-section h2 {
-    font-size: clamp(24px, 7vw, 31px);
-    line-height: 1.02;
+    display: none;
   }
 
   .home-page .instagram-section > div,

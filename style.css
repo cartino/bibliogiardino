@@ -1,4 +1,4 @@
-/* HOME MOBILE COMPOSED R8 - 2026-09-02 */
+/* HOME MOBILE OPTION C R9 - 2026-09-02 */
 
 /* HOME MOBILE TRASPARENZE - R6 VERIFICATO */
 
@@ -1707,66 +1707,141 @@ iframe {
   }
 
   /*
-    Le tre attività non sono card e non scorrono:
-    sono un'unica fascia compatta a tre colonne.
+    ATTIVITÀ — OPZIONE C
+    Un solo riquadro orizzontale, diviso in tre blocchi verticali.
+    Il prato inferiore entra leggermente nel riquadro e crea lo stacco
+    naturale verso Instagram.
   */
   .home-page .activities {
+    position: relative;
+    isolation: isolate;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
-    margin: 4px 0 0;
-    padding: 16px 12px 18px;
+    margin: 14px 18px 38px;
+    padding: 18px 7px 32px;
     overflow: visible;
-    background: transparent;
-    border-radius: 0;
+    background: rgba(255, 249, 236, 0.90);
+    border: 1px solid rgba(46, 103, 55, 0.10);
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(47, 75, 40, 0.08);
   }
 
   .home-page .activity {
     min-width: 0;
-    min-height: 0;
-    display: grid;
-    grid-template-columns: 34px minmax(0, 1fr);
-    align-items: start;
-    gap: 7px;
-    padding: 4px 8px;
+    min-height: 154px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 3px 9px 10px;
     background: transparent;
     border: 0;
     border-radius: 0;
     box-shadow: none;
+    text-align: center;
   }
 
   .home-page .activity + .activity {
-    border-left: 1px solid rgba(46, 103, 55, 0.20);
+    border-left: 1px solid rgba(46, 103, 55, 0.15);
   }
 
   .home-page .activity-icon {
-    width: 34px;
-    height: 34px;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+    flex: 0 0 auto;
   }
 
   .home-page .activity-icon span {
-    font-size: 18px;
+    font-size: 24px;
   }
 
   .home-page .activity h3 {
-    margin-bottom: 3px;
-    font-size: clamp(12.5px, 3.35vw, 14.5px);
+    min-height: 2.15em;
+    margin: 0 0 6px;
+    font-size: clamp(13px, 3.6vw, 15px);
     line-height: 1.05;
+    text-align: center;
   }
 
   .home-page .activity p {
-    max-width: none;
-    margin: 0;
-    font-size: clamp(9.5px, 2.55vw, 11px);
-    line-height: 1.2;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
+    max-width: 108px;
+    margin: 0 auto;
+    font-size: clamp(9.5px, 2.65vw, 11px);
+    line-height: 1.28;
+    text-align: center;
+    display: block;
+    overflow: visible;
   }
 
   .home-page .activity-mark {
     display: none;
+  }
+
+  /*
+    Prato morbido: sovrapposto di pochi pixel al fondo del riquadro.
+    Non è un asset grafico: è tutto CSS, quindi resta leggero e responsive.
+  */
+  .home-page .activities::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    left: -18px;
+    right: -18px;
+    bottom: -27px;
+    height: 46px;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 8% 100%,
+        rgba(116, 171, 55, 0.98) 0 35%,
+        transparent 36%),
+      radial-gradient(ellipse at 27% 100%,
+        rgba(167, 207, 86, 0.98) 0 46%,
+        transparent 47%),
+      radial-gradient(ellipse at 52% 100%,
+        rgba(132, 187, 62, 0.98) 0 39%,
+        transparent 40%),
+      radial-gradient(ellipse at 73% 100%,
+        rgba(184, 216, 101, 0.98) 0 46%,
+        transparent 47%),
+      radial-gradient(ellipse at 93% 100%,
+        rgba(105, 163, 47, 0.98) 0 36%,
+        transparent 37%),
+      linear-gradient(
+        to top,
+        rgba(154, 197, 76, 0.98) 0 38%,
+        rgba(183, 216, 102, 0.92) 39% 48%,
+        transparent 49%
+      );
+  }
+
+  /*
+    Alcuni fili d'erba appena accennati sopra le ondine.
+    Restano volutamente sobri.
+  */
+  .home-page .activities::before {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 21px;
+    pointer-events: none;
+    opacity: 0.72;
+    background:
+      linear-gradient(78deg, transparent 47%, #5d9d35 48% 52%, transparent 53%)
+        6% 100% / 18px 18px no-repeat,
+      linear-gradient(102deg, transparent 47%, #72ad3d 48% 52%, transparent 53%)
+        18% 100% / 16px 16px no-repeat,
+      linear-gradient(80deg, transparent 47%, #5d9d35 48% 52%, transparent 53%)
+        42% 100% / 19px 20px no-repeat,
+      linear-gradient(100deg, transparent 47%, #72ad3d 48% 52%, transparent 53%)
+        67% 100% / 17px 18px no-repeat,
+      linear-gradient(82deg, transparent 47%, #5d9d35 48% 52%, transparent 53%)
+        88% 100% / 18px 20px no-repeat;
   }
 
   /*
@@ -1775,7 +1850,7 @@ iframe {
   */
   .home-page .instagram-section {
     margin: 0;
-    padding: 15px 14px 18px;
+    padding: 11px 14px 18px;
     background: transparent;
     border: 0;
     border-radius: 0;

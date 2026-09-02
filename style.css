@@ -1,3 +1,5 @@
+/* HOME MOBILE-FIRST R7 - 2026-09-02 */
+
 /* HOME MOBILE TRASPARENZE - R6 VERIFICATO */
 
 /* =====================================================
@@ -1436,9 +1438,12 @@ iframe {
     font-size: 23px;
   }
 
-  /* Home: composizione mobile dedicata, coerente con il desktop */
+  /* Home: layout mobile-first dedicato. Desktop invariato. */
   .home-page .hero {
-    padding: 0 0 24px;
+    position: relative;
+    min-height: 0;
+    padding: 0 0 10px;
+    overflow: visible;
     background: var(--paper-soft);
   }
 
@@ -1448,19 +1453,30 @@ iframe {
   }
 
   .home-page .navbar {
-    width: calc(100% - 28px);
-    min-height: 74px;
-    margin: 14px auto -66px;
-    padding: 9px 12px;
-    background: rgba(255, 249, 236, 0.93);
-    border-radius: 20px;
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    right: 12px;
+    z-index: 10;
+    width: auto;
+    min-height: 64px;
+    margin: 0;
+    padding: 7px 10px;
+    background: rgba(255, 249, 236, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.52);
+    border-radius: 18px;
+    box-shadow: 0 7px 20px rgba(47, 75, 40, 0.12);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
   }
 
   .home-page .logo img {
-    height: 54px;
-    max-width: 132px;
+    height: 46px;
+    max-width: 116px;
+  }
+
+  .home-page .menu-toggle {
+    font-size: 27px;
   }
 
   .home-page .hero-inner {
@@ -1472,23 +1488,26 @@ iframe {
   .home-page .hero-mobile-stage {
     position: relative;
     display: block;
-    min-height: 472px;
-    padding: 92px 16px 18px;
+    height: clamp(330px, 95vw, 390px);
+    min-height: 0;
+    padding: 0;
     overflow: hidden;
-    background: url("000.jpg") center center / cover no-repeat;
+    background: url("000.jpg") center 48% / cover no-repeat;
+    border-radius: 0 0 24px 24px;
+    box-shadow: inset 0 -80px 90px rgba(23, 54, 22, 0.08);
   }
 
   .home-page .hero-text {
     position: absolute;
-    left: 18px;
-    bottom: 16px;
-    width: min(72%, 292px);
-    max-width: calc(100% - 36px);
-    padding: 14px 15px 13px;
-    background: rgba(255, 249, 236, 0.88);
-    border: 1px solid rgba(255, 255, 255, 0.56);
-    border-radius: 20px;
-    box-shadow: 0 10px 24px rgba(46, 72, 38, 0.13);
+    left: 12px;
+    bottom: 12px;
+    width: min(80%, 286px);
+    max-width: calc(100% - 24px);
+    padding: 11px 12px 10px;
+    background: rgba(255, 249, 236, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.58);
+    border-radius: 17px;
+    box-shadow: 0 7px 20px rgba(46, 72, 38, 0.12);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
   }
@@ -1498,14 +1517,14 @@ iframe {
   }
 
   .home-page .sun-lines {
-    left: -11px;
-    top: -18px;
-    transform: scale(0.42);
+    left: -10px;
+    top: -15px;
+    transform: scale(0.36);
   }
 
   .home-page .hero-kicker {
-    margin-bottom: 2px;
-    font-size: clamp(22px, 6.2vw, 27px);
+    margin-bottom: 1px;
+    font-size: clamp(20px, 5.7vw, 24px);
     text-shadow: none;
   }
 
@@ -1513,9 +1532,10 @@ iframe {
     display: block;
     width: auto;
     max-width: 100%;
-    font-size: clamp(25px, 7.1vw, 31px);
+    margin: 0;
+    font-size: clamp(22px, 6.8vw, 28px);
     line-height: 0.98;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.045em;
     white-space: nowrap;
     text-shadow: none;
   }
@@ -1525,15 +1545,15 @@ iframe {
   }
 
   .home-page .title-underline {
-    width: 104px;
-    height: 5px;
-    margin: 8px 0 10px;
+    width: 88px;
+    height: 4px;
+    margin: 7px 0 8px;
   }
 
   .home-page .hero-description {
-    max-width: 255px;
-    font-size: clamp(15px, 4.25vw, 17px);
-    line-height: 1.22;
+    max-width: 245px;
+    font-size: clamp(13.5px, 3.9vw, 15.5px);
+    line-height: 1.17;
     text-shadow: none;
   }
 
@@ -1544,17 +1564,17 @@ iframe {
   .home-page .hero-buttons {
     display: flex;
     flex-wrap: nowrap;
-    gap: 7px;
-    width: auto;
-    margin-top: 11px;
+    gap: 6px;
+    margin-top: 9px;
   }
 
   .home-page .button {
     width: auto;
-    min-height: 36px;
-    padding: 7px 10px;
-    border-radius: 11px;
-    font-size: 15px;
+    min-height: 32px;
+    padding: 6px 9px;
+    border-radius: 10px;
+    font-size: clamp(12.5px, 3.7vw, 14px);
+    gap: 5px;
     white-space: nowrap;
   }
 
@@ -1566,11 +1586,13 @@ iframe {
     width: auto;
     max-width: none;
     min-height: 0;
-    margin: 11px 14px 0;
-    padding: 11px 14px 10px;
+    margin: 8px 10px 0;
+    padding: 9px 11px 8px;
     border-width: 1px;
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(60, 80, 45, 0.09);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(60, 80, 45, 0.08);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
   }
 
   .home-page .event-box::before,
@@ -1579,28 +1601,30 @@ iframe {
   }
 
   .home-page .event-box-label {
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     padding-right: 0;
-    font-size: 14px;
-    letter-spacing: 0.65px;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.55px;
   }
 
   .home-page .event-empty {
     display: grid;
-    grid-template-columns: 30px minmax(0, 1fr);
-    gap: 10px;
+    grid-template-columns: 26px minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
   }
 
   .home-page .event-empty-icon {
-    margin-top: 2px;
-    font-size: 27px;
+    margin: 0;
+    font-size: 23px;
   }
 
   .home-page .event-title,
   .home-page .event-real-title {
-    margin-bottom: 3px;
-    font-size: 18px;
-    line-height: 1.06;
+    margin-bottom: 2px;
+    font-size: clamp(15px, 4.3vw, 17px);
+    line-height: 1.04;
   }
 
   .home-page .event-empty-text,
@@ -1609,25 +1633,49 @@ iframe {
   .home-page .event-location,
   .home-page .event-link,
   .home-page .loading {
-    font-size: 13.5px;
-    line-height: 1.16;
+    font-size: 12px;
+    line-height: 1.12;
   }
 
   .home-page .event-real {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2px 10px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "title title"
+      "date time"
+      "location location"
+      "link link";
+    column-gap: 9px;
+    row-gap: 2px;
+    align-items: center;
   }
 
-  .home-page .event-real-title,
-  .home-page .event-location,
-  .home-page .event-link {
-    grid-column: 1 / -1;
+  .home-page .event-real-title {
+    grid-area: title;
+  }
+
+  .home-page .event-date {
+    grid-area: date;
+    min-width: 0;
+  }
+
+  .home-page .event-time {
+    grid-area: time;
+    white-space: nowrap;
+  }
+
+  .home-page .event-location {
+    grid-area: location;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .home-page .event-link {
+    grid-area: link;
     width: fit-content;
-    margin-top: 3px;
+    margin-top: 2px;
     border-bottom-width: 2px;
   }
 
@@ -1636,62 +1684,88 @@ iframe {
   }
 
   .home-page .container {
+    max-width: none;
     margin-top: 0;
-    padding: 0 12px;
+    padding: 0;
   }
 
   .home-page .activities {
-    gap: 15px;
-    padding: 20px 18px 20px;
-    border-radius: 22px 22px 0 0;
+    display: flex;
+    gap: 10px;
+    padding: 12px 12px 15px;
+    overflow-x: auto;
+    background: transparent;
+    border-radius: 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .home-page .activities::-webkit-scrollbar {
+    display: none;
   }
 
   .home-page .activity {
-    grid-template-columns: 54px minmax(0, 1fr);
-    gap: 12px;
+    flex: 0 0 min(74vw, 282px);
+    min-height: 112px;
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    padding: 13px 12px;
+    background: rgba(255, 249, 236, 0.96);
+    border: 1px solid rgba(79, 143, 58, 0.10);
+    border-radius: 17px;
+    box-shadow: 0 5px 14px rgba(46, 72, 38, 0.08);
+    scroll-snap-align: start;
   }
 
   .home-page .activity-icon {
-    width: 52px;
-    height: 52px;
+    width: 44px;
+    height: 44px;
   }
 
   .home-page .activity-icon span {
-    font-size: 27px;
+    font-size: 23px;
   }
 
   .home-page .activity h3 {
     margin-bottom: 3px;
-    font-size: 23px;
+    font-size: 20px;
+    line-height: 1;
   }
 
   .home-page .activity p {
-    font-size: 16px;
-    line-height: 1.18;
+    max-width: none;
+    font-size: 13.5px;
+    line-height: 1.14;
   }
 
   .home-page .activity-mark {
-    margin-top: 7px;
+    width: 42px;
+    height: 4px;
+    margin-top: 6px;
   }
 
   .home-page .instagram-section {
-    margin-top: 18px;
-    padding: 22px 12px;
-    border-radius: 22px;
+    margin: 2px 10px 0;
+    padding: 17px 11px 13px;
+    border-radius: 18px;
     overflow: hidden;
   }
 
   .home-page .section-heading {
-    margin-bottom: 16px;
+    margin-bottom: 11px;
   }
 
   .home-page .section-kicker {
-    font-size: 20px;
+    margin-bottom: 3px;
+    font-size: 17px;
   }
 
   .home-page .instagram-section h2 {
-    font-size: clamp(28px, 8vw, 36px);
-    line-height: 1.04;
+    font-size: clamp(24px, 7vw, 31px);
+    line-height: 1.02;
   }
 
   .home-page .instagram-section > div,
@@ -2101,52 +2175,7 @@ iframe {
 
 /* Smartphone stretti */
 @media (max-width: 480px) {
-  /* Home: solo rifiniture per schermi molto stretti */
-  .home-page .hero-mobile-stage {
-    min-height: 430px;
-  }
-
-  .home-page .hero-text {
-    left: 14px;
-    bottom: 14px;
-    width: min(74%, 276px);
-    max-width: calc(100% - 28px);
-    padding: 13px 14px 12px;
-  }
-
-  .home-page .hero h1 {
-    font-size: clamp(24px, 7.2vw, 29px);
-  }
-
-  .home-page .hero-description {
-    font-size: 15px;
-  }
-
-  .home-page .button {
-    padding-inline: 9px;
-    font-size: 14px;
-  }
-
-  .home-page .event-box {
-    margin-inline: 10px;
-    padding: 10px 12px 9px;
-  }
-
-  .home-page .activity {
-    grid-template-columns: 50px minmax(0, 1fr);
-    justify-items: stretch;
-    text-align: left;
-  }
-
-  .home-page .activity-icon {
-    width: 48px;
-    height: 48px;
-  }
-
-  .home-page .activity p,
-  .home-page .activity-mark {
-    margin-inline: 0;
-  }
+  /* Le regole Home sono fluide e non richiedono override aggiuntivi qui. */
 
   .about-hero h1 {
     font-size: clamp(34px, 10vw, 43px);
@@ -2193,18 +2222,6 @@ iframe {
 }
 
 @media (max-width: 350px) {
-  .home-page .hero h1 {
-    font-size: 25px;
-  }
-
-  .home-page .hero-buttons {
-    gap: 6px;
-  }
-
-  .home-page .button {
-    font-size: 15px;
-  }
-
   .hero h1 {
     font-size: 28px;
   }

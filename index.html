@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Patrick+Hand&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=20260902-r10-diagonal-ig3">
+  <link rel="stylesheet" href="style.css?v=20260903-r11-home-clean">
 </head>
 
 <body class="home-page">
@@ -72,7 +72,7 @@
             Scopri il progetto <span aria-hidden="true">🍃</span>
           </a>
 
-          <a href="calendario.html" class="button secondary">
+          <a href="./calendario.html" class="button secondary" aria-label="Vai al calendario degli eventi">
             Partecipa <span aria-hidden="true">🧡</span>
           </a>
 
@@ -263,9 +263,6 @@
               })
             : "Tutto il giorno";
 
-        const location =
-          event.location || "Biblioteca di Villapizzone";
-
         container.classList.remove("loading");
 
         container.innerHTML = `
@@ -280,10 +277,6 @@
 
             <div class="event-time">
               🕒 ${time}
-            </div>
-
-            <div class="event-location">
-              📍 ${location}
             </div>
 
             <a href="calendario.html" class="event-link">
@@ -326,63 +319,7 @@
     }
 
 
-    /*
-      Mobile Instagram grid fallback.
-      Elfsight sometimes mounts its content after page load or in an open
-      shadow root. This applies the same 3-column gallery rules there too.
-    */
-    function applyMobileInstagramGrid(root = document) {
-      if (window.innerWidth > 760 || !root || !root.querySelectorAll) return;
-
-      root.querySelectorAll(".es-layout-grid-content, .es-layout-grid").forEach((grid) => {
-        grid.style.setProperty("display", "grid", "important");
-        grid.style.setProperty("grid-template-columns", "repeat(3, minmax(0, 1fr))", "important");
-        grid.style.setProperty("gap", "6px", "important");
-        grid.style.setProperty("width", "100%", "important");
-      });
-
-      root.querySelectorAll(".es-post").forEach((post) => {
-        post.style.setProperty("width", "auto", "important");
-        post.style.setProperty("min-width", "0", "important");
-        post.style.setProperty("margin", "0", "important");
-        post.style.setProperty("overflow", "hidden", "important");
-      });
-
-      root.querySelectorAll(
-        ".es-post-text, .es-post-user-name, .es-post-user-picture, " +
-        ".es-post-date, .es-post-location, .es-post-likes-count, " +
-        ".es-post-comments-count, .es-post-source, .es-post-follow, .es-post-share"
-      ).forEach((node) => {
-        node.style.setProperty("display", "none", "important");
-      });
-
-      root.querySelectorAll("*").forEach((node) => {
-        if (node.shadowRoot) {
-          applyMobileInstagramGrid(node.shadowRoot);
-        }
-      });
-    }
-
-    const instagramGridObserver = new MutationObserver(() => {
-      applyMobileInstagramGrid();
-    });
-
-    if (document.body) {
-      instagramGridObserver.observe(document.body, {
-        childList: true,
-        subtree: true
-      });
-    }
-
-    window.addEventListener("load", () => {
-      applyMobileInstagramGrid();
-      setTimeout(applyMobileInstagramGrid, 1200);
-      setTimeout(applyMobileInstagramGrid, 3500);
-    });
-
-    window.addEventListener("resize", applyMobileInstagramGrid);
-
-    loadNextEvent();
+        loadNextEvent();
   </script>
 
 </body>

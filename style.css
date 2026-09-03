@@ -694,6 +694,19 @@ footer {
 }
 
 
+/* CARTINO FOOTER CREDIT - R12 */
+.footer-credit {
+  display: block;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: "Patrick Hand", "Nunito", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+}
+
+
 /* =====================================================
    HOME DESKTOP — HERO PIÙ ARIOSA
    Solo desktop: il mobile R9/R10 rimane invariato.

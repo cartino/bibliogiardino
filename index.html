@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Bibliogiardino</title>
-
   <!-- Font morbidi e amichevoli -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +19,6 @@
   <header class="hero">
 
     <nav class="navbar">
-
       <a class="logo" href="index.html" aria-label="Home Bibliogiardino">
         <img src="logo.png" alt="Logo Bibliogiardino">
       </a>
@@ -28,7 +26,6 @@
       <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" type="button">
         ☰
       </button>
-
       <div class="menu">
         <a class="active" href="index.html">Home</a>
         <a href="chi-siamo.html">Chi siamo</a>
@@ -46,7 +43,6 @@
         <div class="hero-mobile-photo" aria-hidden="true"></div>
 
         <div class="hero-text">
-
         <div class="sun-lines" aria-hidden="true">
           <span></span>
           <span></span>
@@ -67,7 +63,6 @@
         </p>
 
         <div class="hero-buttons">
-
           <a href="chi-siamo.html" class="button primary">
             Scopri il progetto <span aria-hidden="true">🍃</span>
           </a>
@@ -87,7 +82,6 @@
         <div class="event-box-label">
           PROSSIMO EVENTO
         </div>
-
         <div id="event-container" class="loading">
           Caricamento evento...
         </div>
@@ -110,7 +104,6 @@
     <section class="activities" aria-label="Cosa facciamo">
 
       <article class="activity">
-
         <div class="activity-icon activity-icon-green">
           <span>🌱</span>
         </div>
@@ -133,7 +126,6 @@
         <div class="activity-icon activity-icon-yellow">
           <span>🗓️</span>
         </div>
-
         <div>
           <h3>Organizziamo eventi</h3>
 
@@ -155,7 +147,6 @@
 
         <div>
           <h3>Creiamo comunità</h3>
-
           <p>
             Incontri, collaborazione e condivisione
             per un quartiere più bello e accogliente.
@@ -174,7 +165,6 @@
         <p class="section-kicker">Dal nostro Instagram</p>
         <h2>Ultimi momenti dal Bibliogiardino</h2>
       </div>
-
       <script src="https://elfsightcdn.com/platform.js" async></script>
 
       <div
@@ -187,14 +177,12 @@
   </main>
 
   <footer>
-    <strong>Bibliogiardino</strong> – Cura del verde e comunità 🌿
-    <span class="footer-credit">Pixel piantati e annaffiati da Cartino 🌱</span>
+    <strong>Pixel</strong> piantati e annaffiati da Cartino 🌱
   </footer>
 
   <script>
     const calendarId =
       "bibliogiardino.villapizzone@gmail.com";
-
     const apiKey =
       "AIzaSyAvkKbgUNNKUj0r7oD1LZCK9CdsoH7PYZI";
 
@@ -214,7 +202,6 @@
 
         const response = await fetch(url);
         const data = await response.json();
-
         const container =
           document.getElementById("event-container");
 
@@ -230,7 +217,6 @@
                 <div class="event-title">
                   Stiamo preparando nuove attività!
                 </div>
-
                 <div class="event-empty-text">
                   Torna presto per scoprire i prossimi appuntamenti del Bibliogiardino.
                 </div>
@@ -248,7 +234,6 @@
 
         const date =
           new Date(event.start.dateTime || event.start.date);
-
         const formattedDate =
           date.toLocaleDateString("it-IT", {
             weekday: "long",
@@ -265,7 +250,6 @@
             : "Tutto il giorno";
 
         container.classList.remove("loading");
-
         container.innerHTML = `
           <div class="event-real">
             <div class="event-real-title">
@@ -287,7 +271,6 @@
         `;
 
       } catch (error) {
-
         console.error(error);
 
         document.getElementById("event-container").innerHTML = `
@@ -307,7 +290,6 @@
         `;
       }
     }
-
     const menuToggle = document.querySelector(".menu-toggle");
     const menu = document.querySelector(".menu");
 

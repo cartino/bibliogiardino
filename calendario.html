@@ -10,8 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Patrick+Hand&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css?v=20260903-r12-cartino">
+  <link rel="stylesheet" href="style.css?v=20260901-r4">
 </head>
 
 <body class="calendar-page">
@@ -27,7 +26,6 @@
       <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" type="button">
         ☰
       </button>
-
       <div class="menu">
         <a href="index.html">Home</a>
         <a href="chi-siamo.html">Chi siamo</a>
@@ -45,7 +43,6 @@
       <h1>Calendario</h1>
 
       <div class="calendar-title-mark" aria-hidden="true"></div>
-
       <p>
         Qui trovi gli eventi e le attività in programma
         al Bibliogiardino.
@@ -63,7 +60,6 @@
 
       <div class="noticeboard-top">
         <span class="noticeboard-pin pin-left" aria-hidden="true"></span>
-
         <div>
           <p class="noticeboard-small">Bacheca del Bibliogiardino</p>
           <h2>Prossimi appuntamenti</h2>
@@ -76,7 +72,6 @@
 
         <span class="paper-tape tape-top-left" aria-hidden="true"></span>
         <span class="paper-tape tape-top-right" aria-hidden="true"></span>
-
         <iframe
           class="google-calendar"
           src="https://calendar.google.com/calendar/embed?src=bibliogiardino.villapizzone%40gmail.com&ctz=Europe%2FRome"
@@ -87,7 +82,6 @@
           frameborder="0"
           scrolling="no">
         </iframe>
-
       </div>
 
       <div class="noticeboard-footer">
@@ -101,14 +95,12 @@
   </main>
 
   <footer>
-    <strong>Bibliogiardino</strong> – Cura del verde e comunità 🌿
-    <span class="footer-credit">Pixel piantati e annaffiati da Cartino 🌱</span>
+    <strong>Pixel</strong> piantati e annaffiati da Cartino 🌱
   </footer>
 
   <script>
     const menuToggle = document.querySelector(".menu-toggle");
     const menu = document.querySelector(".menu");
-
     if (menuToggle && menu) {
       menuToggle.addEventListener("click", () => {
         const isOpen = menu.classList.toggle("is-open");
@@ -122,7 +114,6 @@
 
     function updateCalendarView() {
       if (!calendarFrame) return;
-
       const nextSource = mobileCalendar.matches
         ? calendarFrame.dataset.mobileSrc
         : calendarFrame.dataset.desktopSrc;
@@ -133,7 +124,6 @@
     }
 
     updateCalendarView();
-
     if (typeof mobileCalendar.addEventListener === "function") {
       mobileCalendar.addEventListener("change", updateCalendarView);
     } else {

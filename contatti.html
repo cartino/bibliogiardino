@@ -10,8 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Patrick+Hand&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css?v=20260903-r12-cartino">
+  <link rel="stylesheet" href="style.css?v=20260901-r4">
 </head>
 
 <body class="contacts-page">
@@ -27,7 +26,6 @@
       <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" type="button">
         ☰
       </button>
-
       <div class="menu">
         <a href="index.html">Home</a>
         <a href="chi-siamo.html">Chi siamo</a>
@@ -46,7 +44,6 @@
         <h1>Contatti</h1>
 
         <div class="contacts-title-mark" aria-hidden="true"></div>
-
         <p>
           Per informazioni sul Bibliogiardino,
           sugli eventi o sulle attività puoi scriverci.
@@ -67,7 +64,6 @@
   <main class="contacts-main">
 
     <section class="contact-card" aria-labelledby="scrivici">
-
       <span class="contact-pin contact-pin-left" aria-hidden="true"></span>
       <span class="contact-pin contact-pin-right" aria-hidden="true"></span>
 
@@ -80,7 +76,6 @@
 
         <article class="contact-detail">
           <div class="contact-icon" aria-hidden="true">✉️</div>
-
           <div>
             <h3>Email</h3>
             <a href="mailto:bibliogiardino.villapizzone@gmail.com">
@@ -99,7 +94,6 @@
               Via Rosina Ferrario Grugnola, 3,<br>
               20156 Milano MI
             </p>
-
             <div class="contact-map">
               <iframe
                 src="https://www.google.com/maps?q=Via%20Rosina%20Ferrario%20Grugnola%203%2C%2020156%20Milano%20MI&output=embed"
@@ -110,7 +104,6 @@
             </div>
           </div>
         </article>
-
         <article class="contact-detail">
           <div class="contact-icon" aria-hidden="true">🗓️</div>
 
@@ -130,7 +123,6 @@
       </div>
 
     </section>
-
     <section class="contacts-note">
       <span aria-hidden="true">🌿</span>
       <p>
@@ -142,14 +134,12 @@
   </main>
 
   <footer>
-    <strong>Bibliogiardino</strong> – Cura del verde e comunità 🌿
-    <span class="footer-credit">Pixel piantati e annaffiati da Cartino 🌱</span>
+    <strong>Pixel</strong> piantati e annaffiati da Cartino 🌱
   </footer>
 
   <script>
     const menuToggle = document.querySelector(".menu-toggle");
     const menu = document.querySelector(".menu");
-
     if (menuToggle && menu) {
       menuToggle.addEventListener("click", () => {
         const isOpen = menu.classList.toggle("is-open");

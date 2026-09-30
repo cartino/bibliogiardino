@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Area membri – Bibliogiardino</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Patrick+Hand&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=20260929-r13-area-membri">
+</head>
+
+<body class="members-page">
+
+  <header class="internal-header members-header">
+
+    <nav class="navbar">
+
+      <a class="logo" href="index.html" aria-label="Home Bibliogiardino">
+        <img src="logo.png" alt="Logo Bibliogiardino">
+      </a>
+
+      <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" type="button">
+        ☰
+      </button>
+
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="chi-siamo.html">Chi siamo</a>
+        <a href="eventi.html">Eventi</a>
+        <a href="calendario.html">Calendario</a>
+        <a href="contatti.html">Contatti</a>
+      </div>
+
+    </nav>
+
+    <section class="members-intro">
+
+      <div class="members-intro-copy">
+        <p class="members-eyebrow">Spazio interno</p>
+
+        <h1>Area membri</h1>
+
+        <div class="members-title-mark" aria-hidden="true"></div>
+
+        <p>
+          Uno spazio per organizzarci, confrontarci
+          e prenderci cura del Bibliogiardino.
+        </p>
+      </div>
+
+      <div class="members-illustration" aria-hidden="true">
+        <span class="members-leaf">🌿</span>
+        <span class="members-lock">🔐</span>
+      </div>
+
+    </section>
+
+    <div class="internal-wave" aria-hidden="true"></div>
+
+  </header>
+
+  <main class="members-main">
+
+    <section class="members-access-note" aria-label="Informazioni sull'accesso">
+      <span aria-hidden="true">🔒</span>
+
+      <div>
+        <strong>Accesso riservato</strong>
+        <p>
+          I contenuti collegati sono visibili solo agli account Google
+          autorizzati dal Bibliogiardino.
+        </p>
+      </div>
+    </section>
+
+    <section class="members-tools" aria-label="Strumenti riservati ai membri">
+
+      <article class="member-tool-card member-tool-calendar">
+        <div class="member-tool-icon" aria-hidden="true">📅</div>
+
+        <p class="member-tool-kicker">Appuntamenti</p>
+        <h2>Riunioni interne</h2>
+
+        <p>
+          Consulta date, orari e prossimi appuntamenti
+          del gruppo di lavoro.
+        </p>
+
+        <a
+          class="member-tool-link"
+          href="https://calendar.google.com/calendar/u/1?cid=ZTQzYWYzYWFjOGMzZTcwY2UwYTk0ZjMyNTdjZTc3NmViM2EwNWQ1ZGUwNTBhYTg4NGI0OTk5YjYwOTIzMGQwNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+          target="_blank"
+          rel="noopener noreferrer">
+          Apri il calendario <span aria-hidden="true">→</span>
+        </a>
+      </article>
+
+      <article class="member-tool-card member-tool-sheet">
+        <div class="member-tool-icon" aria-hidden="true">📋</div>
+
+        <p class="member-tool-kicker">Organizzazione</p>
+        <h2>Programmazione riunioni</h2>
+
+        <p>
+          Ordine del giorno, luoghi, stato delle riunioni
+          e dettagli organizzativi.
+        </p>
+
+        <a
+          class="member-tool-link"
+          href="https://docs.google.com/spreadsheets/d/1jkkZFVbFS6uxZ0HvVfW5mzZpKe-cEqVeejEiYyoyX8c/edit"
+          target="_blank"
+          rel="noopener noreferrer">
+          Apri il foglio <span aria-hidden="true">→</span>
+        </a>
+      </article>
+
+    </section>
+
+    <section class="members-help">
+      <span aria-hidden="true">🌱</span>
+      <p>
+        Se Google ti chiede di accedere, usa l'account
+        con cui hai ricevuto l'autorizzazione.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>Bibliogiardino</strong> – Cura del verde e comunità 🌿
+    <a class="footer-members-link active" href="area-membri.html">Area membri 🌱</a>
+    <span class="footer-credit">Pixel piantati e annaffiati da Cartino 🌱</span>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    if (menuToggle && menu) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = menu.classList.toggle("is-open");
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.textContent = isOpen ? "×" : "☰";
+      });
+    }
+  </script>
+
+</body>
+</html>

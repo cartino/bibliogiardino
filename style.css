@@ -2512,3 +2512,437 @@ iframe {
     border-width: 7px;
   }
 }
+
+
+/* =====================================================
+   AREA MEMBRI - R13
+   ===================================================== */
+
+.footer-members-link {
+  display: block;
+  width: fit-content;
+  margin: 9px auto 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Nunito", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(243, 198, 74, 0.72);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer-members-link:hover,
+.footer-members-link:focus-visible {
+  color: #fff;
+  border-color: var(--yellow);
+  transform: translateY(-1px);
+}
+
+.footer-members-link.active {
+  color: #fff;
+}
+
+.members-header {
+  padding-bottom: 112px;
+}
+
+.members-intro {
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  margin: 72px auto 0;
+  padding: 0 38px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 230px;
+  align-items: center;
+  gap: 70px;
+}
+
+.members-eyebrow {
+  margin: 0 0 9px;
+  color: var(--orange);
+  font-family: "Patrick Hand", "Nunito", Arial, sans-serif;
+  font-size: 29px;
+  line-height: 1;
+}
+
+.members-intro h1 {
+  margin: 0;
+  color: var(--green-dark);
+  font-family: "Fredoka", "Nunito", Arial, sans-serif;
+  font-size: clamp(58px, 7vw, 94px);
+  font-weight: 600;
+  line-height: 0.96;
+}
+
+.members-title-mark {
+  width: min(320px, 74%);
+  height: 9px;
+  margin: 22px 0 25px;
+  background: var(--yellow);
+  border-radius: 999px;
+  transform: rotate(-1deg);
+}
+
+.members-intro-copy > p:last-child {
+  max-width: 650px;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(24px, 2.1vw, 31px);
+  line-height: 1.38;
+}
+
+.members-illustration {
+  position: relative;
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+}
+
+.members-leaf {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  font-size: 86px;
+  transform: rotate(-12deg);
+}
+
+.members-lock {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 118px;
+  height: 118px;
+  font-size: 58px;
+  background: rgba(255, 249, 236, 0.88);
+  border: 2px solid rgba(46, 103, 55, 0.12);
+  border-radius: 34px 34px 52px 34px;
+  box-shadow: var(--soft-shadow);
+  transform: rotate(3deg);
+}
+
+.members-main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 42px 38px 26px;
+}
+
+.members-access-note {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  align-items: center;
+  gap: 18px;
+  padding: 20px 24px;
+  background: rgba(230, 240, 211, 0.8);
+  border: 1px solid rgba(46, 103, 55, 0.12);
+  border-radius: 22px;
+}
+
+.members-access-note > span {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  background: rgba(255, 249, 236, 0.78);
+  border-radius: 50%;
+  font-size: 27px;
+}
+
+.members-access-note strong {
+  color: var(--green-dark);
+  font-family: "Fredoka", "Nunito", Arial, sans-serif;
+  font-size: 23px;
+}
+
+.members-access-note p {
+  margin: 3px 0 0;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.members-tools {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  margin-top: 34px;
+}
+
+.member-tool-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 340px;
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: rgba(255, 249, 236, 0.94);
+  border: 1px solid rgba(46, 103, 55, 0.1);
+  border-radius: 28px;
+  box-shadow: var(--soft-shadow);
+}
+
+.member-tool-card::after {
+  content: "";
+  position: absolute;
+  right: -34px;
+  bottom: -40px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(165, 198, 123, 0.17);
+}
+
+.member-tool-sheet::after {
+  background: rgba(243, 198, 74, 0.18);
+}
+
+.member-tool-icon {
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  margin-bottom: 22px;
+  background: var(--green-soft);
+  border-radius: 21px 21px 31px 21px;
+  font-size: 34px;
+  transform: rotate(-2deg);
+}
+
+.member-tool-sheet .member-tool-icon {
+  background: rgba(243, 198, 74, 0.24);
+  transform: rotate(2deg);
+}
+
+.member-tool-kicker {
+  margin: 0 0 5px;
+  color: var(--orange);
+  font-family: "Patrick Hand", "Nunito", Arial, sans-serif;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.member-tool-card h2 {
+  margin: 0;
+  color: var(--green-dark);
+  font-family: "Fredoka", "Nunito", Arial, sans-serif;
+  font-size: clamp(31px, 3.4vw, 45px);
+  font-weight: 600;
+  line-height: 1.02;
+}
+
+.member-tool-card > p:not(.member-tool-kicker) {
+  max-width: 460px;
+  margin: 17px 0 26px;
+  font-size: 20px;
+  line-height: 1.38;
+}
+
+.member-tool-link {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  color: var(--green-dark);
+  font-family: "Nunito", Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 900;
+  text-decoration: none;
+  border-bottom: 3px solid var(--yellow);
+}
+
+.member-tool-link span {
+  transition: transform 0.2s ease;
+}
+
+.member-tool-link:hover span,
+.member-tool-link:focus-visible span {
+  transform: translateX(5px);
+}
+
+.members-help {
+  margin-top: 30px;
+  padding: 21px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  color: var(--green-dark);
+  text-align: center;
+}
+
+.members-help > span {
+  font-size: 26px;
+}
+
+.members-help p {
+  margin: 0;
+  font-family: "Patrick Hand", "Nunito", Arial, sans-serif;
+  font-size: 21px;
+}
+
+@media (max-width: 900px) {
+  .members-header {
+    padding-bottom: 88px;
+  }
+
+  .members-intro {
+    margin-top: 52px;
+    padding: 0 24px;
+    grid-template-columns: minmax(0, 1fr) 120px;
+    gap: 28px;
+  }
+
+  .members-intro h1 {
+    font-size: clamp(46px, 10vw, 66px);
+  }
+
+  .members-intro-copy > p:last-child {
+    font-size: 22px;
+  }
+
+  .members-illustration {
+    min-height: 120px;
+  }
+
+  .members-lock {
+    width: 88px;
+    height: 88px;
+    border-radius: 27px 27px 39px 27px;
+    font-size: 43px;
+  }
+
+  .members-leaf {
+    left: -2px;
+    font-size: 58px;
+  }
+
+  .members-main {
+    padding: 34px 24px 22px;
+  }
+
+  .members-tools {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .member-tool-card {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .members-header {
+    padding-bottom: 70px;
+  }
+
+  .members-intro {
+    margin-top: 42px;
+    padding: 0 18px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .members-illustration {
+    display: none;
+  }
+
+  .members-eyebrow {
+    font-size: 23px;
+  }
+
+  .members-intro h1 {
+    font-size: clamp(42px, 13vw, 56px);
+  }
+
+  .members-title-mark {
+    width: 190px;
+    height: 7px;
+    margin: 16px 0 18px;
+  }
+
+  .members-intro-copy > p:last-child {
+    max-width: 430px;
+    font-size: 20px;
+    line-height: 1.32;
+  }
+
+  .members-main {
+    padding: 28px 14px 18px;
+  }
+
+  .members-access-note {
+    grid-template-columns: 43px minmax(0, 1fr);
+    gap: 12px;
+    padding: 15px 14px;
+    border-radius: 17px;
+  }
+
+  .members-access-note > span {
+    width: 42px;
+    height: 42px;
+    font-size: 21px;
+  }
+
+  .members-access-note strong {
+    font-size: 18px;
+  }
+
+  .members-access-note p {
+    font-size: 14px;
+  }
+
+  .members-tools {
+    margin-top: 18px;
+  }
+
+  .member-tool-card {
+    padding: 24px 20px;
+    border-radius: 21px;
+  }
+
+  .member-tool-icon {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 16px;
+    border-radius: 17px 17px 25px 17px;
+    font-size: 27px;
+  }
+
+  .member-tool-kicker {
+    font-size: 19px;
+  }
+
+  .member-tool-card h2 {
+    font-size: clamp(29px, 8vw, 37px);
+  }
+
+  .member-tool-card > p:not(.member-tool-kicker) {
+    margin: 12px 0 20px;
+    font-size: 17px;
+  }
+
+  .member-tool-link {
+    font-size: 17px;
+  }
+
+  .members-help {
+    margin-top: 16px;
+    padding: 16px 12px;
+    gap: 9px;
+  }
+
+  .members-help p {
+    font-size: 18px;
+  }
+
+  .footer-members-link {
+    margin-top: 8px;
+    font-size: 13px;
+  }
+}
